@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        />
+        <title>Sample</title>
+        <meta name="author" content="ryanjan" />
+        <meta name="description" content="Sample" />
+
+        <!-- FAVICON FILES -->
+        <link href="<%= require('./images/web_content/favicon.png') %>" rel="shortcut icon" />
+
+        <!-- SOCIAL MEDIA META -->
+        <meta property="og:image" content="<%= require('./images/web_content/description.jpg') %>" />
+        <meta property="og:site_name" content="Sample" />
+        <meta property="og:title" content="Sample" />
+        <meta property="og:description" content="Sample" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="" />
+
+        <!-- FONTS -->
+        <link rel="preload" as="style" href="//fonts.googleapis.com/earlyaccess/notosanstc.css" />
+        <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosanstc.css" />
+
+        <% for (var css of htmlWebpackPlugin.files.css) { %>
+        <link href="<%= css %>" rel="stylesheet" />
+        <% } %> <% for (const js of htmlWebpackPlugin.files.js) { if(js.includes('head')) { %>
+        <script src="<%= js %>" defer></script>
+        <% } } %>
+    </head>
+    <body>
+        <div id="div_start" class="bg">
+            <div class="content"></div>
+        </div>
+        <% for (const js of htmlWebpackPlugin.files.js) { if(js.includes('app')) { %>
+        <script src="<%= js %>" defer></script>
+        <% } } %>
+    </body>
+</html>

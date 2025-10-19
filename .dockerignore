@@ -1,0 +1,20 @@
+# 忽略 Node.js 套件依賴目錄
+/node_modules
+
+# 忽略 Webpack 建置輸出目錄
+/dist
+
+# 忽略日誌檔案
+npm-debug.log
+*.log
+
+# 作業系統產生的檔案
+.DS_Store
+Thumbs.db
+
+# 編輯器/IDE 的設定目錄
+.idea
+.vscode
+
+# 環境變數檔案 (通常包含機密資訊，不應上傳)
+.env

@@ -1,0 +1,28 @@
+{
+    // 給您的開發環境取個名字
+    "name": "Ryan's Dev Container",
+
+    // 指向我們已經寫好的 docker-compose.yml 檔案
+    // ".." 表示上一層目錄
+    "dockerComposeFile": [
+        "../docker-compose.yml"
+    ],
+
+    // 告訴 VS Code 要連接到 docker-compose.yml 中的哪一個服務 (service)
+    "service": "app",
+
+    // VS Code 在容器內打開時，預設的工作區資料夾路徑
+    "workspaceFolder": "/app",
+
+    // 讓 VS Code 在容器內自動幫您安裝一些好用的擴充功能
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                // 我們最需要的 Prettier 擴充功能
+                "esbenp.prettier-vscode",
+                // 另一個好用的 Docker 擴充功能
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    }
+}

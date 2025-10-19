@@ -1,0 +1,25 @@
+# 使用 docker-compose 檔案格式版本
+version: '3.8'
+
+# 定義要運行的服務
+services:
+  # 服務名稱，可自訂，這裡取名為 app
+  app:
+    # 指示 Docker Compose 使用當前目錄下的 Dockerfile 來建置映像檔
+    build: .
+    # 為容器取一個好記的名字
+    container_name: web_2025_itf_forest
+    # 設定連接埠映射 (Port Mapping)
+    # 格式為 "本機電腦的連接埠:容器內的連接埠"
+    # 這樣您就能在本機的瀏覽器透過 localhost:8080 訪問服務
+    ports:
+      - "8080:8080"
+    # 設定資料卷 (Volumes)，這是最重要的部分
+    # 它的作用是將您本機的專案目錄，同步到容器內的 /app 目錄
+    # 這樣您在本機修改任何程式碼，會立刻同步到容器內，webpack-dev-server 就會自動重整
+    volumes:
+      # 將當前目錄 (.) 掛載到容器的 /app
+      - .:/app
+      # 這一行是個技巧：防止本機的 node_modules 覆蓋容器內已安裝的 node_modules
+      # 確保容器使用的是在 Dockerfile 中安裝的、最純淨的套件版本
+      - /app/node_modules

@@ -1,0 +1,10 @@
+# 忽略建置輸出目錄
+dist
+build
+
+# 忽略所有 lock 檔案
+package-lock.json
+yarn.lock
+
+# 忽略 node_modules
+node_modules
