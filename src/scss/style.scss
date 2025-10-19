@@ -1,71 +1,232 @@
 html,
 body {
-    position: absolute;
-    min-height: 100dvh;
-    height: 100vh;
-    height: 100dvh;
-    min-height: 100vh;
-    min-height: 100dvh;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-    overflow: hidden;
+	position: absolute;
+	min-height: 100dvh;
+	height: 100vh;
+	height: 100dvh;
+	min-height: 100vh;
+	min-height: 100dvh;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	overflow: hidden;
 
-    color: #000;
-    font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
-    background: #fff;
+	color: #000;
+	font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+	background: #fff;
 
-    img {
-        -webkit-touch-callout: none; /* 禁用長按圖片下載 */
-    }
+	img {
+		-webkit-touch-callout: none; /* 禁用長按圖片下載 */
+	}
 }
 
 .is_can_click {
-    cursor: pointer;
+	cursor: pointer;
+}
+
+.button-scale {
+	animation: button-scale 0.3s ease-in-out;
+}
+
+.center-button-scale {
+	animation: center-button-scale 0.3s ease-in-out;
+}
+
+@keyframes button-scale {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes center-button-scale {
+	0% {
+		transform: translate(-50%, -50%) scale(1);
+	}
+	50% {
+		transform: translate(-50%, -50%) scale(1.1);
+	}
+	100% {
+		transform: translate(-50%, -50%) scale(1);
+	}
 }
 
 .bg {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 5;
-    width: 100%;
-    height: 100%;
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 5;
+	width: 100%;
+	height: 100%;
 
-    .content {
-        position: absolute;
-        z-index: 5;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        aspect-ratio: 720/1280;
-    }
+	.content {
+		position: absolute;
+		z-index: 5;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		aspect-ratio: 720/1280;
+	}
 }
 
 #div_start {
-    display: none;
-    z-index: 6;
+	display: none;
+	z-index: 6;
+	background-color: #fcfcfa;
+	background: url('../images/ui/start_bg.jpg') 0 0 repeat;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+	.logo {
+		position: absolute;
+		top: 31%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 20%;
+		animation: scaleEffect 2s ease-in-out infinite;
+	}
+
+	.hint {
+		position: absolute;
+		top: 48%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 7%;
+		z-index: 1;
+	}
+
+	#btn_start_go {
+		position: absolute;
+		top: 83%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 15%;
+		z-index: 2;
+	}
+}
+
+#div_game {
+	display: none;
+	z-index: 6;
+	background-color: #fcfcfa;
+	background: url('../images/ui/game_bg.jpg') 0 0 repeat;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+	.logo {
+		position: absolute;
+		top: 15%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 10%;
+		animation: scaleEffect 2s ease-in-out infinite;
+	}
+
+	#item_1 {
+		position: absolute;
+		top: 36%;
+		left: 30%;
+		transform: translate(-50%, -50%);
+		height: 23%;
+		z-index: 1;
+	}
+
+	#item_2 {
+		position: absolute;
+		top: 38%;
+		left: 72%;
+		transform: translate(-50%, -50%);
+		height: 21%;
+		z-index: 1;
+	}
+
+	#item_3 {
+		position: absolute;
+		top: 60%;
+		left: 35%;
+		transform: translate(-50%, -50%);
+		height: 20%;
+		z-index: 1;
+	}
+
+	#item_4 {
+		position: absolute;
+		top: 59%;
+		left: 72%;
+		transform: translate(-50%, -50%);
+		height: 22%;
+		z-index: 1;
+	}
+
+	#btn_game_redeem {
+		position: absolute;
+		top: 83%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 15%;
+		z-index: 2;
+	}
+}
+
+#div_redeem {
+	display: none;
+	z-index: 7;
+	background-color: rgba($color: #fcfcfa, $alpha: 0.7);
+
+	.content_bg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 40%;
+		z-index: 0;
+	}
+
+	#btn_redeem_confirm {
+		position: absolute;
+		top: 58%;
+		left: 67%;
+		transform: translate(-50%, -50%);
+		height: 9%;
+		z-index: 1;
+	}
+
+	#btn_redeem_cancel {
+		position: absolute;
+		top: 58%;
+		left: 34%;
+		transform: translate(-50%, -50%);
+		height: 9%;
+		z-index: 1;
+	}
 }
 
 // 版面小於720x1280
 @media screen and (min-aspect-ratio: 9/16) {
-    .bg {
-        .content {
-            height: 100%;
-        }
-    }
+	.bg {
+		.content {
+			height: 100%;
+		}
+	}
 }
 
 // 版面大於720x1280
 @media screen and (max-aspect-ratio: 9/16) {
-    .bg {
-        .content {
-            width: 100%;
-        }
-    }
+	.bg {
+		.content {
+			width: 100%;
+		}
+	}
 }
